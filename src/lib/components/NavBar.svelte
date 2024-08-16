@@ -7,10 +7,9 @@
 </script>
 
 <Navbar>
-	<NavHamburger>
-		<NavUl>
-			<NavLi href={`/${locale}`}>{$t('navBar.home')}</NavLi>
-			<NavLi href={`/${locale}/about`}>{$t('navBar.about')}</NavLi>
-		</NavUl>
-	</NavHamburger>
+	<NavHamburger />
+	<NavUl>
+		<NavLi href={`/${$locale}`}>{$t('navBar.home')}</NavLi>
+		<NavLi href={`/${$locale}/about`}>{$t('navBar.about')}</NavLi>
+	</NavUl>
 </Navbar>
