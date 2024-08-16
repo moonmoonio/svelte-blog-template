@@ -1,4 +1,5 @@
 <script lang='ts'>
+	import NavBrand from 'flowbite-svelte/NavBrand.svelte'
 	import NavHamburger from 'flowbite-svelte/NavHamburger.svelte'
 	import NavLi from 'flowbite-svelte/NavLi.svelte'
 	import NavUl from 'flowbite-svelte/NavUl.svelte'
@@ -7,6 +8,7 @@
 </script>
 
 <Navbar>
+	<NavBrand href={`/${$locale}`}>Test Site</NavBrand>
 	<NavHamburger />
 	<NavUl>
 		<NavLi href={`/${$locale}`}>{$t('navBar.home')}</NavLi>
