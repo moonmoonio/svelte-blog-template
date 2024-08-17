@@ -16,35 +16,43 @@
 	}
 </script>
 
-<hr />
-<Footer>
-	<div class="m-6 sm:flex sm:justify-between">
-		<FooterCopyright href={hrefConverter('/', $locale)} by={site_config().copyrightOwner} {year} />
-		<div class="grid grid-cols-2 gap-8 text-base">
-			<div>
-				<h2 class="font-semibold text-gray-900 dark:text-white">
-					{$t('footer.sourceCode')}
-				</h2>
-				<FooterLinkGroup>
-					<div class="mt-1 flex items-center">
-						<Icon.GithubSolid class="mr-1" />
-						<FooterLink href={site_config().sourceRepository}>{$t('footer.repository')}</FooterLink>
-					</div>
-				</FooterLinkGroup>
-			</div>
-			<div>
-				<h2 class="font-semibold text-gray-900 dark:text-white">
-					{$t('footer.socialMedia')}
-				</h2>
-				<FooterLinkGroup>
-					{#each site_config().socialMedia as socialMedia}
+<div class=" container mx-auto">
+	<hr />
+	<Footer>
+		<div class="m-6 sm:flex sm:justify-between">
+			<FooterCopyright
+				href={hrefConverter('/', $locale)}
+				by={site_config().copyrightOwner}
+				{year}
+			/>
+			<div class="grid grid-cols-2 gap-8 text-base">
+				<div>
+					<h2 class="font-semibold text-gray-900 dark:text-white">
+						{$t('footer.sourceCode')}
+					</h2>
+					<FooterLinkGroup>
 						<div class="mt-1 flex items-center">
-							<svelte:component this={pickIcon(socialMedia.icon)} class="mr-1" />
-							<FooterLink href={socialMedia.link}>{socialMedia.text}</FooterLink>
+							<Icon.GithubSolid class="mr-1" />
+							<FooterLink href={site_config().sourceRepository}
+								>{$t('footer.repository')}</FooterLink
+							>
 						</div>
-					{/each}
-				</FooterLinkGroup>
+					</FooterLinkGroup>
+				</div>
+				<div>
+					<h2 class="font-semibold text-gray-900 dark:text-white">
+						{$t('footer.socialMedia')}
+					</h2>
+					<FooterLinkGroup>
+						{#each site_config().socialMedia as socialMedia}
+							<div class="mt-1 flex items-center">
+								<svelte:component this={pickIcon(socialMedia.icon)} class="mr-1" />
+								<FooterLink href={socialMedia.link}>{socialMedia.text}</FooterLink>
+							</div>
+						{/each}
+					</FooterLinkGroup>
+				</div>
 			</div>
 		</div>
-	</div>
-</Footer>
+	</Footer>
+</div>
