@@ -1,0 +1,10 @@
+---
+
+title: Hello
+layout: blog
+
+---
+
+# {title}
+
+Hello world!
