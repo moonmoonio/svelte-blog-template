@@ -10,13 +10,16 @@ import enNavBar from './en/navBar.json';
 // Spanish
 import esNavBar from './es/navBar.json';
 
+// Language agnostic
+import generic from './generic.json';
+
 export const defaultLocale: string = Languages.EN;
 
 export const config: Config = {
 	initLocale: 'en',
 	translations: {
-		en: { navBar: enNavBar },
-		es: { navBar: esNavBar }
+		en: { navBar: enNavBar, generic },
+		es: { navBar: esNavBar, generic }
 	}
 };
 
