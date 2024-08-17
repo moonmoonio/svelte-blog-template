@@ -3,6 +3,7 @@ import { t } from '$lib/translations';
 
 export function site_config(): SiteConfig {
 	return {
+		copyrightOwner: 'moonmoonio',
 		url: 'localhost',
 		name: t.get('generic.websiteName'),
 		sourceRepository: 'https://github.com/moonmoonio/svelte-blog-template',
