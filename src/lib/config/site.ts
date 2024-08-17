@@ -9,8 +9,14 @@ export function site_config(): SiteConfig {
 		sourceRepository: 'https://github.com/moonmoonio/svelte-blog-template',
 		socialMedia: [
 			{
-				link: 'https://github.com/moonmoonio',
-				text: '@moonmoonio@github.com'
+				link: 'https://github.com',
+				text: 'GitHub',
+				icon: 'GithubSolid'
+			},
+			{
+				link: 'https://reddit.com',
+				text: 'reddit',
+				icon: 'RedditSolid'
 			}
 		]
 	};
