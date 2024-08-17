@@ -1,18 +1,19 @@
 <script lang="ts">
+	import DarkMode from 'flowbite-svelte/DarkMode.svelte';
+	import Dropdown from 'flowbite-svelte/Dropdown.svelte';
+	import DropdownItem from 'flowbite-svelte/DropdownItem.svelte';
 	import NavBrand from 'flowbite-svelte/NavBrand.svelte';
 	import NavHamburger from 'flowbite-svelte/NavHamburger.svelte';
 	import NavLi from 'flowbite-svelte/NavLi.svelte';
 	import NavUl from 'flowbite-svelte/NavUl.svelte';
 	import Navbar from 'flowbite-svelte/Navbar.svelte';
-	import Dropdown from 'flowbite-svelte/Dropdown.svelte';
-	import DropdownItem from 'flowbite-svelte/DropdownItem.svelte';
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 
-	import { t, locale } from '$lib/translations';
+	import { Languages } from '$lib/enums';
+	import { goto } from '$app/navigation';
 	import { hrefConverter } from '$lib/transformers';
 	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
-	import { Languages } from '$lib/enums';
+	import { t, locale } from '$lib/translations';
 
 	const changeLocale = async (new_locale: string) => {
 		let url = $page.url.pathname.slice(1 + locale.get().length);
@@ -26,7 +27,9 @@
 <Navbar>
 	<NavBrand href={hrefConverter('/', locale.get())}>{$t('generic.websiteName')}</NavBrand>
 	<NavHamburger />
-	<NavUl>
+	<NavUl
+		ulClass="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:text-sm md:font-medium md:items-center"
+	>
 		<NavLi href={hrefConverter('/', locale.get())}>{$t('navBar.home')}</NavLi>
 		<NavLi href={hrefConverter('/blog', locale.get())}>{$t('navBar.blog')}</NavLi>
 		<NavLi href={hrefConverter('/tags', locale.get())}>{$t('navBar.tags')}</NavLi>
@@ -41,5 +44,8 @@
 			{/each}
 		</Dropdown>
 		<NavLi href={hrefConverter('/about', locale.get())}>{$t('navBar.about')}</NavLi>
+		<NavLi>
+			<DarkMode />
+		</NavLi>
 	</NavUl>
 </Navbar>
