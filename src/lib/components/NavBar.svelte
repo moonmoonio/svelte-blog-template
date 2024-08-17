@@ -16,7 +16,7 @@
 	import { t, locale } from '$lib/translations';
 
 	const changeLocale = async (new_locale: string) => {
-		let url = $page.url.pathname.slice(1 + locale.get().length);
+		let url = $page.url.pathname.slice(1 + $locale.length);
 		if (url.length === 0) {
 			url = '/';
 		}
@@ -25,14 +25,14 @@
 </script>
 
 <Navbar>
-	<NavBrand href={hrefConverter('/', locale.get())}>{$t('generic.websiteName')}</NavBrand>
+	<NavBrand href={hrefConverter('/', $locale)}>{$t('generic.websiteName')}</NavBrand>
 	<NavHamburger />
 	<NavUl
 		ulClass="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:text-base md:font-medium md:items-center"
 	>
-		<NavLi href={hrefConverter('/', locale.get())}>{$t('navBar.home')}</NavLi>
-		<NavLi href={hrefConverter('/blog', locale.get())}>{$t('navBar.blog')}</NavLi>
-		<NavLi href={hrefConverter('/tags', locale.get())}>{$t('navBar.tags')}</NavLi>
+		<NavLi href={hrefConverter('/', $locale)}>{$t('navBar.home')}</NavLi>
+		<NavLi href={hrefConverter('/blog', $locale)}>{$t('navBar.blog')}</NavLi>
+		<NavLi href={hrefConverter('/tags', $locale)}>{$t('navBar.tags')}</NavLi>
 		<NavLi class="cursor-pointer">
 			{$t('navBar.languages')}<ChevronDownOutline class="inline" />
 		</NavLi>
@@ -43,7 +43,7 @@
 				>
 			{/each}
 		</Dropdown>
-		<NavLi href={hrefConverter('/about', locale.get())}>{$t('navBar.about')}</NavLi>
+		<NavLi href={hrefConverter('/about', $locale)}>{$t('navBar.about')}</NavLi>
 		<NavLi>
 			<DarkMode />
 		</NavLi>
