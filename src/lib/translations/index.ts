@@ -6,9 +6,11 @@ import { Languages } from '$lib/enums';
 
 // English
 import enNavBar from './en/navBar.json';
+import enFooter from './en/footer.json';
 
 // Spanish
 import esNavBar from './es/navBar.json';
+import esFooter from './es/footer.json';
 
 // Language agnostic
 import generic from './generic.json';
@@ -19,8 +21,8 @@ export const defaultLocale: string = Languages.EN;
 export const config: Config = {
 	initLocale: 'en',
 	translations: {
-		en: { navBar: enNavBar, generic, languages },
-		es: { navBar: esNavBar, generic, languages }
+		en: { navBar: enNavBar, footer: enFooter, generic, languages },
+		es: { navBar: esNavBar, footer: esFooter, generic, languages }
 	}
 };
 
