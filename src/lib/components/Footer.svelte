@@ -16,7 +16,7 @@
 	}
 </script>
 
-<div class=" container mx-auto">
+<div class="container mx-auto text-xl">
 	<hr />
 	<Footer>
 		<div class="m-6 sm:flex sm:justify-between">
@@ -25,7 +25,7 @@
 				by={site_config().copyrightOwner}
 				{year}
 			/>
-			<div class="grid grid-cols-2 gap-8 text-base">
+			<div class="grid grid-cols-2 gap-8">
 				<div>
 					<h2 class="font-semibold text-gray-900 dark:text-white">
 						{$t('footer.sourceCode')}

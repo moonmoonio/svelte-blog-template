@@ -25,10 +25,13 @@
 </script>
 
 <Navbar>
-	<NavBrand href={hrefConverter('/', $locale)}>{$t('generic.websiteName')}</NavBrand>
+	<NavBrand href={hrefConverter('/', $locale)}
+		><span class="text-2xl font-semibold dark:text-white">{$t('generic.websiteName')}</span
+		></NavBrand
+	>
 	<NavHamburger />
 	<NavUl
-		ulClass="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:text-base md:font-medium md:items-center"
+		ulClass="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 text-xl md:items-center"
 	>
 		<NavLi href={hrefConverter('/', $locale)}>{$t('navBar.home')}</NavLi>
 		<NavLi href={hrefConverter('/blog', $locale)}>{$t('navBar.blog')}</NavLi>
