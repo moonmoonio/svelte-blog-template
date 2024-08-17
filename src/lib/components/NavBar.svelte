@@ -10,7 +10,17 @@
 
 	import { t, locale } from '$lib/translations';
 	import { hrefConverter } from '$lib/transformers';
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 	import { Languages } from '$lib/enums';
+
+	const changeLocale = async (new_locale: string) => {
+		let url = $page.url.pathname.slice(1 + locale.get().length);
+		if (url.length === 0) {
+			url = '/';
+		}
+		goto(hrefConverter(url, new_locale));
+	};
 </script>
 
 <Navbar>
@@ -25,7 +35,9 @@
 		</NavLi>
 		<Dropdown>
 			{#each Object.values(Languages) as language}
-				<DropdownItem>{$t(`languages.${language}`)}</DropdownItem>
+				<DropdownItem on:click={async () => await changeLocale(language)}
+					>{$t(`languages.${language}`)}</DropdownItem
+				>
 			{/each}
 		</Dropdown>
 		<NavLi href={hrefConverter('/about', locale.get())}>{$t('navBar.about')}</NavLi>
