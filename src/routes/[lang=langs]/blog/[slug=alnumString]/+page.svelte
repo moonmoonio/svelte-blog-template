@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { locale } from '$lib/translations';
-
-	const blogPost = import(`$lib/blog/posts/${$page.params.slug}/${$locale}.svx`);
+	import { posts } from '$lib/blog';
 </script>
 
-{#await blogPost then post}
-	<svelte:component this={post.default} />
-{/await}
+<svelte:component this={posts[$locale].get($page.params.slug).default} />
