@@ -3,7 +3,6 @@
 	import { locale } from '$lib/translations';
 
 	const blogPost = import(`$lib/blog/posts/${$page.params.slug}/${$locale}.svx`);
-	console.info($locale);
 </script>
 
 {#await blogPost then post}
