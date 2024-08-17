@@ -18,9 +18,9 @@
 
 <hr />
 <Footer>
-	<div class="m-6 sm:flex sm:items-center sm:justify-between">
+	<div class="m-6 sm:flex sm:justify-between">
 		<FooterCopyright href={hrefConverter('/', $locale)} by={site_config().copyrightOwner} {year} />
-		<div class="grid grid-cols-2 gap-8 text-sm">
+		<div class="grid grid-cols-2 gap-8 text-base">
 			<div>
 				<h2 class="font-semibold text-gray-900 dark:text-white">
 					{$t('footer.sourceCode')}
