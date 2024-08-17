@@ -1,3 +1,3 @@
-export default interface BlogPostMetadata {
+export interface BlogPostMetadata {
 	title: string;
 }
