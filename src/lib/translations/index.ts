@@ -10,6 +10,7 @@ import enFooter from './en/footer.json';
 import enNavBar from './en/navBar.json';
 import enTagList from './en/tagList.json';
 import enTagsTable from './en/tagsTable.json';
+import enTagPosts from './en/tagPosts.json';
 
 // Spanish
 import esBlogPostList from './es/blogPostList.json';
@@ -17,6 +18,7 @@ import esFooter from './es/footer.json';
 import esNavBar from './es/navBar.json';
 import esTagList from './es/tagList.json';
 import esTagsTable from './es/tagsTable.json';
+import esTagPosts from './es/tagPosts.json';
 
 // Language agnostic
 import generic from './generic.json';
@@ -33,6 +35,7 @@ export const config: Config = {
 			blogPostList: enBlogPostList,
 			tagList: enTagList,
 			tagsTable: enTagsTable,
+			tagPosts: enTagPosts,
 			generic,
 			languages
 		},
@@ -42,6 +45,7 @@ export const config: Config = {
 			blogPostList: esBlogPostList,
 			tagList: esTagList,
 			tagsTable: esTagsTable,
+			tagPosts: esTagPosts,
 			generic,
 			languages
 		}
