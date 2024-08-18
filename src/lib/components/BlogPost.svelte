@@ -1,9 +1,11 @@
 <script lang="ts">
-	export let title;
+	import type { BlogPostMetadata } from '$lib/types/BlogPostMetadata';
+
+	export let metadata: BlogPostMetadata;
 </script>
 
 <div class="container mx-auto p-6 text-xl">
-	<h1>{title}</h1>
+	<h1>{metadata.title}</h1>
 	<slot />
 </div>
 

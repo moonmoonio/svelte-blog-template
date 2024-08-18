@@ -6,6 +6,6 @@
 	import BlogPost from '$lib/components/BlogPost.svelte';
 </script>
 
-<BlogPost title={posts[$locale].get($page.params.slug).metadata.title}>
+<BlogPost metadata={posts[$locale].get($page.params.slug).metadata}>
 	<svelte:component this={posts[$locale].get($page.params.slug).default} />
 </BlogPost>
