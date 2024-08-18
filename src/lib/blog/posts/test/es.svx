@@ -2,7 +2,8 @@
 
 title: Prueba
 publishDate: 2024-08-16
-tags: [prueba]
+summary: Una publicación del blog que contiene un lorem ipsum
+tags: [prueba, publicación, lorem ipsum]
 
 ---
 

@@ -2,7 +2,8 @@
 
 title: Test
 publishDate: 2024-08-16
-tags: [test]
+summary: A blog post that contains a lorem ipsum
+tags: [test, blog post, lorem ipsum]
 
 ---
 

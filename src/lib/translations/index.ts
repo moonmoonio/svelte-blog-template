@@ -8,11 +8,13 @@ import { Languages } from '$lib/enums';
 import enNavBar from './en/navBar.json';
 import enFooter from './en/footer.json';
 import enBlogPostList from './en/blogPostList.json';
+import enTagList from './en/tagList.json';
 
 // Spanish
 import esNavBar from './es/navBar.json';
 import esFooter from './es/footer.json';
 import esBlogPostList from './es/blogPostList.json';
+import esTagList from './es/tagList.json';
 
 // Language agnostic
 import generic from './generic.json';
@@ -23,8 +25,22 @@ export const defaultLocale: string = Languages.EN;
 export const config: Config = {
 	initLocale: 'en',
 	translations: {
-		en: { navBar: enNavBar, footer: enFooter, blogPostList: enBlogPostList, generic, languages },
-		es: { navBar: esNavBar, footer: esFooter, blogPostList: esBlogPostList, generic, languages }
+		en: {
+			navBar: enNavBar,
+			footer: enFooter,
+			blogPostList: enBlogPostList,
+			tagList: enTagList,
+			generic,
+			languages
+		},
+		es: {
+			navBar: esNavBar,
+			footer: esFooter,
+			blogPostList: esBlogPostList,
+			tagList: esTagList,
+			generic,
+			languages
+		}
 	}
 };
 

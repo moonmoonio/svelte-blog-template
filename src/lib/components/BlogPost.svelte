@@ -2,6 +2,7 @@
 	import P from 'flowbite-svelte/P.svelte';
 
 	import type { BlogPostMetadata } from '$lib/types/BlogPostMetadata';
+	import TagList from '$lib/components/TagList.svelte';
 	import { locale } from '$lib/translations';
 
 	export let metadata: BlogPostMetadata;
@@ -9,6 +10,9 @@
 
 <div class="container mx-auto p-6 text-xl">
 	<h1>{metadata.title}</h1>
+	{#if metadata.tags !== undefined}
+		<TagList tags={metadata.tags} />
+	{/if}
 	<P class="text-xl dark:text-gray-400" align="right"
 		>{new Date(metadata.publishDate).toLocaleDateString($locale)}</P
 	>

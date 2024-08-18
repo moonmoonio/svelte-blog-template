@@ -8,6 +8,7 @@
 	import { t, locale } from '$lib/translations';
 	import { sortBlogPosts } from '$lib/types/BlogPostMetadata';
 	import type { BlogPostMetadata } from '$lib/types/BlogPostMetadata';
+	import TagList from '$lib/components/TagList.svelte';
 
 	export let blogPosts: BlogPostMetadata[];
 	export let numPosts: number | null = null;
@@ -31,6 +32,9 @@
 				>
 					{#if metadata.summary !== undefined}
 						<p class="mb-1 font-normal text-gray-500 dark:text-gray-400">{metadata.summary}</p>
+					{/if}
+					{#if metadata.tags !== undefined}
+						<TagList tags={metadata.tags} />
 					{/if}
 					<div class="pt-2">
 						<Button color="alternative" href={hrefConverter(`/blog/${metadata.slug}`, $locale)}
