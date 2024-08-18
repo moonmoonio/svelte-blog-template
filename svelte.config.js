@@ -17,8 +17,11 @@ const config = {
 			assets: 'build',
 			precompress: true,
 			strict: true,
-			fallback: '404.html'
+			fallback: 'index.html'
 		}),
+		prerender: {
+			entries: ['*', '/']
+		},
 		paths: {
 			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
 		}
