@@ -1,3 +1,5 @@
+import { base } from '$app/paths';
+
 export function hrefConverter(href: string, locale: string): string {
 	/**
 	 * Returns an href converted from a generic reference to one
@@ -8,7 +10,7 @@ export function hrefConverter(href: string, locale: string): string {
 	 * @returns Modified href with locale prepended to it
 	 */
 	if (!href.startsWith(`/${locale}`)) {
-		href = `/${locale}${href}`;
+		href = `${base}/${locale}${href}`;
 	}
 	return href;
 }
