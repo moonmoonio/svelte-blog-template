@@ -7,6 +7,8 @@
 	import TableSearch from 'flowbite-svelte/TableSearch.svelte';
 	import { writable } from 'svelte/store';
 
+	import { t, locale } from '$lib/translations';
+
 	export let tagsPosts: [string, number][];
 	let searchTag = '';
 	const sortKey = writable(0);
@@ -40,10 +42,15 @@
 	}
 </script>
 
-<TableSearch placeholder="Tag" hoverable={true} bind:inputValue={searchTag} shadow>
+<TableSearch
+	placeholder={$t('tagsTable.searchByTag')}
+	hoverable={true}
+	bind:inputValue={searchTag}
+	shadow
+>
 	<TableHead>
-		<TableHeadCell on:click={() => sortTable(0)}>Tag</TableHeadCell>
-		<TableHeadCell on:click={() => sortTable(1)}>Number of posts</TableHeadCell>
+		<TableHeadCell on:click={() => sortTable(0)}>{$t('tagsTable.tag')}</TableHeadCell>
+		<TableHeadCell on:click={() => sortTable(1)}>{$t('tagsTable.numberOfPosts')}</TableHeadCell>
 	</TableHead>
 	<TableBody tableBodyClass="divide-y">
 		{#each $sortedTags as [tag, count]}

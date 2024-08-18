@@ -1,0 +1,7 @@
+{
+	"tags": "Tags",
+	"description": "These are the tags used in the blog's posts",
+	"tag": "Tag",
+	"numberOfPosts": "Number of posts",
+	"searchByTag": "Search by tag"
+}

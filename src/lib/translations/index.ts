@@ -5,16 +5,18 @@ import { Languages } from '$lib/enums';
 // Import translations
 
 // English
-import enNavBar from './en/navBar.json';
-import enFooter from './en/footer.json';
 import enBlogPostList from './en/blogPostList.json';
+import enFooter from './en/footer.json';
+import enNavBar from './en/navBar.json';
 import enTagList from './en/tagList.json';
+import enTagsTable from './en/tagsTable.json';
 
 // Spanish
-import esNavBar from './es/navBar.json';
-import esFooter from './es/footer.json';
 import esBlogPostList from './es/blogPostList.json';
+import esFooter from './es/footer.json';
+import esNavBar from './es/navBar.json';
 import esTagList from './es/tagList.json';
+import esTagsTable from './es/tagsTable.json';
 
 // Language agnostic
 import generic from './generic.json';
@@ -30,6 +32,7 @@ export const config: Config = {
 			footer: enFooter,
 			blogPostList: enBlogPostList,
 			tagList: enTagList,
+			tagsTable: enTagsTable,
 			generic,
 			languages
 		},
@@ -38,6 +41,7 @@ export const config: Config = {
 			footer: esFooter,
 			blogPostList: esBlogPostList,
 			tagList: esTagList,
+			tagsTable: esTagsTable,
 			generic,
 			languages
 		}
