@@ -5,8 +5,10 @@
 	import TableHead from 'flowbite-svelte/TableHead.svelte';
 	import TableHeadCell from 'flowbite-svelte/TableHeadCell.svelte';
 	import TableSearch from 'flowbite-svelte/TableSearch.svelte';
+	import { CaretSortSolid } from 'flowbite-svelte-icons';
 	import { writable } from 'svelte/store';
 
+	import { hrefConverter } from '$lib/transformers';
 	import { t, locale } from '$lib/translations';
 
 	export let tagsPosts: [string, number][];
@@ -49,14 +51,34 @@
 	shadow
 >
 	<TableHead>
-		<TableHeadCell on:click={() => sortTable(0)}>{$t('tagsTable.tag')}</TableHeadCell>
-		<TableHeadCell on:click={() => sortTable(1)}>{$t('tagsTable.numberOfPosts')}</TableHeadCell>
+		<TableHeadCell on:click={() => sortTable(0)}
+			><div class="flex items-center justify-between">
+				{$t('tagsTable.tag')}<CaretSortSolid />
+			</div></TableHeadCell
+		>
+		<TableHeadCell on:click={() => sortTable(1)}
+			><div
+				class="flex items-center justify-between
+				"
+			>
+				{$t('tagsTable.numberOfPosts')}
+				<CaretSortSolid />
+			</div></TableHeadCell
+		>
+		<TableHeadCell><span class="sr-only">{$t('tagsTable.viewPost')}</span></TableHeadCell>
 	</TableHead>
 	<TableBody tableBodyClass="divide-y">
 		{#each $sortedTags as [tag, count]}
 			<TableBodyRow>
 				<TableBodyCell>{tag}</TableBodyCell>
 				<TableBodyCell>{count}</TableBodyCell>
+				<TableBodyCell
+					><a
+						href={hrefConverter(`/tags/${tag}`, $locale)}
+						class="text-primary-600 hover:underline dark:text-primary-500"
+						>{$t('tagsTable.viewPost')}</a
+					></TableBodyCell
+				>
 			</TableBodyRow>
 		{/each}
 	</TableBody>
