@@ -1,7 +1,9 @@
 export interface BlogPostMetadata {
-	title: string;
 	publishDate: string | Date;
+	slug?: string;
 	summary?: string;
+	tags?: string[];
+	title: string;
 }
 
 export function sortBlogPosts(post1: BlogPostMetadata, post2: BlogPostMetadata) {
