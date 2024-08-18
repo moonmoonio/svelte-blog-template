@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-
-	import { locale } from '$lib/translations';
-	import { posts } from '$lib/blog';
+	import type { PageData } from './$types';
 	import BlogPost from '$lib/components/BlogPost.svelte';
+
+	export let data: PageData;
 </script>
 
-<BlogPost metadata={posts[$locale].get($page.params.slug).metadata}>
-	<svelte:component this={posts[$locale].get($page.params.slug).default} />
+<BlogPost metadata={data.post.metadata}>
+	<svelte:component this={data.post.default} />
 </BlogPost>
