@@ -11,12 +11,13 @@
 
 	import { Languages } from '$lib/enums';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { hrefConverter } from '$lib/transformers';
 	import { page } from '$app/stores';
 	import { t, locale } from '$lib/translations';
 
 	const changeLocale = async (new_locale: string) => {
-		let url = $page.url.pathname.slice(1 + $locale.length);
+		let url = $page.url.pathname.slice(1 + base.length + 1 + $locale.length);
 		if (url.length === 0) {
 			url = '/';
 		}
