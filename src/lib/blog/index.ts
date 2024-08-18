@@ -30,4 +30,4 @@ for (const path in entries) {
 	});
 }
 
-export { posts };
+export { posts, tags };
