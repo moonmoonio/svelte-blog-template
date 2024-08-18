@@ -2,6 +2,7 @@
 
 title: Hola
 publishDate: 2024-08-17
+summary: ¡Esta publicación sí tiene un resumen!
 
 ---
 

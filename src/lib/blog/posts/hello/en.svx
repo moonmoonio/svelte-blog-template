@@ -2,6 +2,7 @@
 
 title: Hello
 publishDate: 2024-08-17
+summary: This one does have a summary! 
 
 ---
 
