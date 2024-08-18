@@ -17,7 +17,7 @@
 	import { t, locale } from '$lib/translations';
 
 	const changeLocale = async (new_locale: string) => {
-		let url = $page.url.pathname.slice(1 + base.length + 1 + $locale.length);
+		let url = $page.url.pathname.slice(base.length + 1 + $locale.length);
 		if (url.length === 0) {
 			url = '/';
 		}
