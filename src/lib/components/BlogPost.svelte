@@ -1,11 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { locale } from '$lib/translations';
-	import { posts } from '$lib/blog';
+	export let title;
 </script>
 
-<div>
-	<svelte:component this={posts[$locale].get($page.params.slug).default} />
+<div class="container mx-auto p-6 text-xl">
+	<h1>{title}</h1>
+	<slot />
 </div>
 
 <style lang="postcss">
