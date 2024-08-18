@@ -30,4 +30,19 @@ for (const path in entries) {
 	});
 }
 
-export { posts, tags };
+const aboutEntries = import.meta.glob<BlogPost>('./about/*.svx', { eager: true });
+
+const aboutPosts: BlogPosts = {};
+for (const path in aboutEntries) {
+	const post = aboutEntries[path];
+	post.metadata.publishDate = new Date(post.metadata.publishDate);
+	let [locale] = path.split('/').reverse();
+	locale = locale.slice(0, locale.indexOf('.'));
+	if (aboutPosts[locale]) {
+		aboutPosts[locale].set('/about', post);
+	} else {
+		aboutPosts[locale] = new Map([['/about', post]]);
+	}
+}
+
+export { posts, tags, aboutPosts };
