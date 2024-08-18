@@ -11,7 +11,7 @@
 	let searchTag = '';
 	const sortKey = writable(0);
 	const sortDirection = writable(1);
-	const sortItems = writable(tagsPosts);
+	const sortedTags = writable(tagsPosts);
 	const sortTable = (key: number) => {
 		if ($sortKey === key) {
 			sortDirection.update((val) => -val);
@@ -20,13 +20,13 @@
 			sortDirection.set(1);
 		}
 	};
-	$: filteredItems = tagsPosts.filter(
+	$: filteredTags = tagsPosts.filter(
 		([tag]) => tag.toLowerCase().indexOf(searchTag.toLowerCase()) !== -1
 	);
 	$: {
 		const key = $sortKey;
 		const direction = $sortDirection;
-		const sorted = filteredItems.sort((a, b) => {
+		const sorted = filteredTags.sort((a, b) => {
 			const valA = a[key];
 			const valB = b[key];
 			if (valA < valB) {
@@ -36,8 +36,7 @@
 			}
 			return 0;
 		});
-		console.info(key, direction, sorted);
-		sortItems.set(sorted);
+		sortedTags.set(sorted);
 	}
 </script>
 
@@ -47,7 +46,7 @@
 		<TableHeadCell on:click={() => sortTable(1)}>Number of posts</TableHeadCell>
 	</TableHead>
 	<TableBody tableBodyClass="divide-y">
-		{#each $sortItems as [tag, count]}
+		{#each $sortedTags as [tag, count]}
 			<TableBodyRow>
 				<TableBodyCell>{tag}</TableBodyCell>
 				<TableBodyCell>{count}</TableBodyCell>
