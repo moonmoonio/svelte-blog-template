@@ -11,7 +11,7 @@
 	export let blogPosts: BlogPosts;
 </script>
 
-<div class="container mx-auto px-6 py-6 text-xl lg:px-52">
+<div>
 	<Timeline>
 		{#each blogPosts[$locale].entries() as [slug, post]}
 			<div class="m-6 flex w-auto items-center rounded-lg bg-gray-50 py-2 dark:bg-gray-900">
