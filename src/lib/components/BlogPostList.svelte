@@ -2,17 +2,21 @@
 	import Timeline from 'flowbite-svelte/Timeline.svelte';
 	import TimelineItem from 'flowbite-svelte/TimelineItem.svelte';
 	import Button from 'flowbite-svelte/Button.svelte';
-	import { ArrowRightAltOutline } from 'flowbite-svelte-icons';
+	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 
 	import { locale } from '$lib/translations';
+	import type { BlogPosts } from '$lib/types/BlogPosts';
 
-	export let blogPosts;
+	export let blogPosts: BlogPosts;
 </script>
 
-<Timeline>
-	{#each blogPosts[$locale] as { metadata }}
-		<TimelineItem title={metadata.title}>
-			<Button>Read more<ArrowRightAltOutline /></Button>
-		</TimelineItem>
-	{/each}
-</Timeline>
+<div class="container mx-auto px-6 py-6 text-xl md:px-72">
+	<Timeline>
+		{#each blogPosts[$locale].values() as post}
+			<TimelineItem title={post.metadata.title} date="February 2022">
+				<p class="mb-4 font-normal text-gray-500 dark:text-gray-400">Lorem ipsum</p>
+				<Button color="alternative">Read more<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
+			</TimelineItem>
+		{/each}
+	</Timeline>
+</div>
