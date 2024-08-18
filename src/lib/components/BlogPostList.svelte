@@ -19,10 +19,14 @@
 					title={post.metadata.title}
 					date={new Date(post.metadata.publishDate).toLocaleDateString($locale)}
 				>
-					<p class="mb-4 font-normal text-gray-500 dark:text-gray-400">Lorem ipsum</p>
-					<Button color="alternative" href={hrefConverter(`/blog/${slug}`, $locale)}
-						>Read more<ArrowRightOutline class="ms-2 h-5 w-5" /></Button
-					>
+					{#if post.metadata.summary !== undefined}
+						<p class="mb-1 font-normal text-gray-500 dark:text-gray-400">{post.metadata.summary}</p>
+					{/if}
+					<div class="pt-2">
+						<Button color="alternative" href={hrefConverter(`/blog/${slug}`, $locale)}
+							>Read more<ArrowRightOutline class="ms-2 h-5 w-5" /></Button
+						>
+					</div>
 				</TimelineItem>
 			</div>
 		{/each}
@@ -32,5 +36,8 @@
 <style lang="postcss">
 	div :global(h3) {
 		@apply text-2xl md:text-4xl;
+	}
+	div :global(li) {
+		@apply mb-4;
 	}
 </style>
