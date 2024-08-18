@@ -1,11 +1,18 @@
 <script lang="ts">
+	import P from 'flowbite-svelte/P.svelte';
+
 	import type { BlogPostMetadata } from '$lib/types/BlogPostMetadata';
+	import { locale } from '$lib/translations';
 
 	export let metadata: BlogPostMetadata;
 </script>
 
 <div class="container mx-auto p-6 text-xl">
 	<h1>{metadata.title}</h1>
+	<P class="text-xl dark:text-gray-400" align="right"
+		>{new Date(metadata.publishDate).toLocaleDateString($locale)}</P
+	>
+	<hr />
 	<slot />
 </div>
 
