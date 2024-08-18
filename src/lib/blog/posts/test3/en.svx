@@ -2,6 +2,7 @@
 
 title: Test 3
 publishDate: 2024-05-16
+summary: Summary for the test blog post
 
 ---
 
