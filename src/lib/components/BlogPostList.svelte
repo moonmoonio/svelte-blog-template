@@ -5,7 +5,7 @@
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 
 	import { hrefConverter } from '$lib/transformers';
-	import { locale } from '$lib/translations';
+	import { t, locale } from '$lib/translations';
 	import type { BlogPosts } from '$lib/types/BlogPosts';
 
 	export let blogPosts: BlogPosts;
@@ -24,7 +24,7 @@
 					{/if}
 					<div class="pt-2">
 						<Button color="alternative" href={hrefConverter(`/blog/${slug}`, $locale)}
-							>Read more<ArrowRightOutline class="ms-2 h-5 w-5" /></Button
+							>{$t('blogPostList.readMore')}<ArrowRightOutline class="ms-2 h-5 w-5" /></Button
 						>
 					</div>
 				</TimelineItem>
