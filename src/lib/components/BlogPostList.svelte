@@ -13,7 +13,10 @@
 <div class="container mx-auto px-6 py-6 text-xl md:px-72">
 	<Timeline>
 		{#each blogPosts[$locale].values() as post}
-			<TimelineItem title={post.metadata.title} date="February 2022">
+			<TimelineItem
+				title={post.metadata.title}
+				date={new Date(post.metadata.publishDate).toLocaleDateString($locale)}
+			>
 				<p class="mb-4 font-normal text-gray-500 dark:text-gray-400">Lorem ipsum</p>
 				<Button color="alternative">Read more<ArrowRightOutline class="ms-2 h-5 w-5" /></Button>
 			</TimelineItem>

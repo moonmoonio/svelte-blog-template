@@ -6,6 +6,7 @@ const entries = import.meta.glob<BlogPost>('./posts/**/*.svx', { eager: true });
 const posts: BlogPosts = {};
 for (const path in entries) {
 	const post = entries[path];
+	post.metadata.publishDate = new Date(post.metadata.publishDate);
 	let [locale, slug] = path.split('/').reverse();
 	locale = locale.slice(0, locale.indexOf('.'));
 	if (posts[locale]) {
