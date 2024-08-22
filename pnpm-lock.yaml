@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      bigger-picture:
+        specifier: ^1.1.17
+        version: 1.1.17
       sveltekit-i18n:
         specifier: ^2.4.2
         version: 2.4.2(svelte@4.2.18)
@@ -851,6 +854,9 @@ packages:
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
+
+  bigger-picture@1.1.17:
+    resolution: {integrity: sha512-7jCBq2azW0aLdW8ife2YdWCVFZt8wUXFRFs0mfSQkJQjSYSIzButr49CyTUyxp5ZwhAfgZK4ntIf+GzjRhpDaQ==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -2909,6 +2915,8 @@ snapshots:
   axobject-query@4.1.0: {}
 
   balanced-match@1.0.2: {}
+
+  bigger-picture@1.1.17: {}
 
   binary-extensions@2.3.0: {}
 

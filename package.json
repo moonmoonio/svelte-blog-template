@@ -45,6 +45,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"bigger-picture": "^1.1.17",
 		"sveltekit-i18n": "^2.4.2"
 	}
 }
