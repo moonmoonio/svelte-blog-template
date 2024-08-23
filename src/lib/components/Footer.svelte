@@ -16,7 +16,7 @@
 	}
 </script>
 
-<div class="container mx-auto text-xl">
+<div class="container mx-auto md:text-xl">
 	<hr />
 	<Footer>
 		<div class="m-6 sm:flex sm:justify-between">
