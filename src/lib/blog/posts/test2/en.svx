@@ -2,8 +2,14 @@
 
 title: Test 2
 publishDate: 2024-07-16
+summary: Blog post containing a couple of image galleries.
+tags: [gallery]
 
 ---
+
+<script>
+	import MasonryGallery from '$lib/components/MasonryGallery.svelte';
+</script>
 
 ## This is a test
 
@@ -17,3 +23,64 @@ Maecenas turpis ante, iaculis in imperdiet in, tristique a est. Interdum et male
 
 In quis purus ex. Curabitur vitae fermentum dui, sit amet interdum ex. Donec et urna nec nulla sollicitudin semper et at dui. Integer vitae nibh leo. Cras viverra feugiat dui at ultrices. Duis quis ex vitae sapien congue maximus. Phasellus eget vulputate justo. Vivamus metus sem, malesuada sit amet libero sed, ullamcorper lacinia purus. Proin iaculis pharetra nibh in consectetur. Aenean vel maximus eros, at posuere orci. Praesent eget velit justo. 
 
+## This is a masonry gallery
+
+<MasonryGallery
+	images={[
+		{
+			img: 'https://get.pxhere.com/photo/animal-pet-kitten-cat-small-mammal-fauna-heal-blue-eye-close-up-nose-whiskers-vertebrate-domestic-lying-tabby-cat-norwegian-forest-cat-ginger-fur-small-to-medium-sized-cats-cat-like-mammal-carnivoran-domestic-short-haired-cat-domestic-long-haired-cat-609263.jpg',
+			alt: 'cat',
+			width: 4732,
+			height: 3168
+		},
+		{
+			img: 'http://upload.wikimedia.org/wikipedia/commons/c/c4/Savannah_Cat_portrait.jpg',
+			alt: 'cat',
+			width: 1440,
+			height: 2160
+		},
+		{
+			img: 'http://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg',
+			alt: 'cat',
+			width: 3456,
+			height: 2304
+		},
+		{
+			img: 'https://i.pinimg.com/originals/fd/44/d0/fd44d0a03d2df74ca13d5e26cb37e634.jpg',
+			alt: 'cat',
+			width: 1080,
+			height: 1080
+		},
+	]}
+/>
+
+## This is a separate gallery
+
+<MasonryGallery
+	images={[
+		{
+			img: 'https://images5.alphacoders.com/131/1310870.jpg',
+			alt: 'cat',
+			width: 3894,
+			height: 2596
+		},
+		{
+			img: 'https://fullhdwall.com/wp-content/uploads/2016/02/Best-cat-photo-1080x1080.jpeg',
+			alt: 'cat',
+			width: 1080,
+			height: 1080
+		},
+		{
+			img: 'https://www.photos-public-domain.com/wp-content/uploads/2018/05/siamese-tabby-cat.jpg',
+			alt: 'cat',
+			width: 2592,
+			height: 2592
+		},
+		{
+			img: 'https://www.photos-public-domain.com/wp-content/uploads/2018/04/orange-and-white-cat-bathing-in-a-sunbeam.jpg',
+			alt: 'cat',
+			width: 4160,
+			height: 3120
+		}
+	]}
+/>
