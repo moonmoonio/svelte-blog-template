@@ -17,7 +17,9 @@
 		>{new Date(metadata.publishDate).toLocaleDateString($locale)}</P
 	>
 	<hr />
-	<slot />
+	<main>
+		<slot />
+	</main>
 </div>
 
 <style lang="postcss">
@@ -42,7 +44,7 @@
 	div :global(pre) {
 		@apply md:text-xl dark:text-white;
 	}
-	div :global(a) {
+	main :global(a) {
 		@apply font-medium text-blue-600 hover:underline dark:text-blue-500;
 	}
 </style>
