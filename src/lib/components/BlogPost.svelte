@@ -42,4 +42,7 @@
 	div :global(pre) {
 		@apply md:text-xl dark:text-white;
 	}
+	div :global(a) {
+		@apply font-medium text-blue-600 hover:underline dark:text-blue-500;
+	}
 </style>
