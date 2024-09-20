@@ -67,7 +67,7 @@ Locale information is mostly contained within `src/lib/translations/`.
 
 The file located at `src/lib/config/site.ts` sets up links to social media and it declares the copyright owner specified in the site's footer.
 
-The available icons for the social media links are found in https://flowbite-svelte.com/icons/solid-icons
+The available icons for the social media icons can be found in https://flowbite-svelte.com/icons/solid-icons, as well as in https://leshak.github.io/svelte-icons-pack/#/pack/si (note that only Simple Icons are supported by default).
 
 ### Home page
 
