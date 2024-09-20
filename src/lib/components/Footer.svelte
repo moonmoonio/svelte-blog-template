@@ -62,7 +62,9 @@
 									this={pickIcon(socialMedia.icon).component}
 									{...pickIcon(socialMedia.icon).props}
 								/>
-								<FooterLink href={socialMedia.link}>{socialMedia.text}</FooterLink>
+								<FooterLink href={socialMedia.link} {...socialMedia.link_props}
+									>{socialMedia.text}</FooterLink
+								>
 							</div>
 						{/each}
 					</FooterLinkGroup>

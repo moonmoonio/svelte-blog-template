@@ -21,7 +21,10 @@ export function site_config(): SiteConfig {
 			{
 				link: 'https://mastodon.social/',
 				text: 'mastodon',
-				icon: 'SiMastodon'
+				icon: 'SiMastodon',
+				link_props: {
+					rel: 'me'
+				}
 			}
 		]
 	};
