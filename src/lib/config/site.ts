@@ -17,6 +17,11 @@ export function site_config(): SiteConfig {
 				link: 'https://reddit.com',
 				text: 'reddit',
 				icon: 'RedditSolid'
+			},
+			{
+				link: 'https://mastodon.social/',
+				text: 'mastodon',
+				icon: 'SiMastodon'
 			}
 		]
 	};
