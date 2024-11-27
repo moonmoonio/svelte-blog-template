@@ -9,7 +9,7 @@ tags: [hola, prueba]
 
 ## ¡Hola mundo!
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut quam tellus. Nam rhoncus, ligula eget malesuada gravida, tellus lorem congue ex, at molestie nunc magna scelerisque urna. Sed tempor est nunc, et vulputate ex gravida vitae. Quisque ut viverra metus. Vestibulum nec vehicula nunc, non tincidunt libero. Maecenas sit amet diam neque. In ultricies, nibh quis vehicula cursus, ligula leo scelerisque sem, et mollis turpis ante non diam. Nulla vestibulum turpis varius sem elementum rhoncus. Nam tempus eros suscipit sem feugiat interdum. Vivamus pharetra tempus maximus. Quisque in finibus nulla. Cras ac dapibus ligula. Pellentesque et est a leo sagittis faucibus sed a magna. Pellentesque pulvinar elit at magna sagittis, quis tristique lorem egestas.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut quam tellus. Nam rhoncus, ligula eget malesuada gravida, tellus lorem congue ex, at molestie nunc magna scelerisque urna. Sed tempor est nunc, et vulputate ex gravida vitae. Quisque ut viverra metus. Vestibulum nec vehicula nunc, non tincidunt libero. Maecenas sit amet diam neque. In ultricies, nibh quis vehicula cursus, ligula leo scelerisque sem, et mollis turpis ante non diam. Nulla vestibulum turpis varius sem elementum rhoncus. Nam tempus eros suscipit sem feugiat interdum. Vivamus pharetra tempus maximus. Quisque in finibus nulla. Cras ac dapibus ligula. Pellentesque et est a leo sagittis faucibus sed a magna. Pellentesque pulvinar elit at magna sagittis, quis tristique lorem egestas. [^1]
 
 Cras sollicitudin efficitur ultrices. Proin urna mi, accumsan et scelerisque in, malesuada at neque. Phasellus eu mi in mi consectetur ornare. Sed eu turpis egestas, faucibus ipsum ac, molestie lorem. Ut varius porta finibus. In hac habitasse platea dictumst. Pellentesque nec dapibus eros. In mauris lectus, pharetra ac nisl at, tincidunt facilisis diam. Morbi lacinia, turpis quis fringilla sagittis, leo tellus sagittis mauris, ut placerat lectus mi at ante. Nullam semper facilisis leo quis mollis.
 
@@ -21,13 +21,28 @@ In quis purus ex. Curabitur vitae fermentum dui, sit amet interdum ex. Donec et 
 
 ## Título de segundo nivel
 
-- Lista:
+- Lista 1:
 	- Objeto #1
 	- Objeto #2
 	- Objeto #3
 	- Objeto #4
 	- Objeto #5
 
+
+- Lista 2:
+	- Objeto #1
+	- Objeto #2
+	- Objeto #3
+	- Objeto #4
+	- Objeto #5
+
+
+- Lista 3:
+	- Objeto #1
+	- Objeto #2
+	- Objeto #3
+	- Objeto #4
+	- Objeto #5
 ## Ejemplos de código
 
 ### Python
@@ -44,3 +59,5 @@ const func = () => {
 	console.info("¡Hola mundo!")
 }
 ```
+
+[^1]: ¡Hola, esta es una nota al pie de la página!
