@@ -42,7 +42,10 @@
 		@apply list-inside list-decimal pl-6 leading-normal md:text-xl dark:text-white;
 	}
 	div :global(pre) {
-		@apply md:text-xl dark:text-white;
+		@apply rounded-lg bg-gray-100 p-4 md:text-xl dark:bg-gray-700 dark:text-white;
+	}
+	div :global(code) {
+		@apply rounded-lg bg-gray-100 p-1 md:text-xl dark:bg-gray-700 dark:text-white;
 	}
 	main :global(a) {
 		@apply font-medium text-blue-600 hover:underline dark:text-blue-500;
