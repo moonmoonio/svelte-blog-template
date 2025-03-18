@@ -4,4 +4,5 @@ export interface Image {
 	width: number;
 	height: number;
 	caption?: string;
+	thumb?: string;
 }

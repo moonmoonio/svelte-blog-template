@@ -45,8 +45,13 @@
 			data-width={image.width}
 			data-alt={image.alt}
 			data-caption={image.caption}
+			data-thumb={image.thumb}
 		>
-			<img src={image.img} alt={image.alt} />
+			{#if image.thumb !== undefined}
+				<img src={image.thumb} alt={image.alt} loading="lazy" />
+			{:else}
+				<img src={image.img} alt={image.alt} />
+			{/if}
 		</a>
 	{/each}
 </div>
