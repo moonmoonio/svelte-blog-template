@@ -1,9 +1,14 @@
+import type { Author } from 'feed';
+
 export interface BlogPostMetadata {
+	authors?: Author[];
+	contributors?: Author[];
 	publishDate: string | Date;
 	slug?: string;
 	summary?: string;
 	tags?: string[];
 	title: string;
+	updatedDate?: string | Date;
 }
 
 export function sortBlogPosts(post1: BlogPostMetadata, post2: BlogPostMetadata) {
