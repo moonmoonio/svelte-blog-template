@@ -6,11 +6,10 @@
 
 	export let images: Image[];
 	const containerId = `${uuidv4()}-images`;
-	let divElement: HTMLDivElement;
 	let bp;
 
 	onMount(async () => {
-		bp = BiggerPicture({ target: divElement });
+		bp = BiggerPicture({ target: document.body });
 		const { default: Macy } = await import('macy');
 		Macy({
 			container: `#${containerId}`,
@@ -35,7 +34,7 @@
 	}
 </script>
 
-<div bind:this={divElement} class="m-4" id={containerId}>
+<div class="m-4" id={containerId}>
 	{#each images as image}
 		<a
 			on:click={openBiggerPicture}
