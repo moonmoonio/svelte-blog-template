@@ -5,6 +5,7 @@ import { Languages } from '$lib/enums';
 // Import translations
 
 // English
+import enBlogPost from './en/blogPost.json';
 import enBlogPostList from './en/blogPostList.json';
 import enFooter from './en/footer.json';
 import enNavBar from './en/navBar.json';
@@ -15,6 +16,7 @@ import enHome from './en/home.json';
 import enErrors from './en/errors.json';
 
 // Spanish
+import esBlogPost from './es/blogPost.json';
 import esBlogPostList from './es/blogPostList.json';
 import esFooter from './es/footer.json';
 import esNavBar from './es/navBar.json';
@@ -37,6 +39,7 @@ export const config: Config = {
 			navBar: enNavBar,
 			footer: enFooter,
 			blogPostList: enBlogPostList,
+			blogPost: enBlogPost,
 			tagList: enTagList,
 			tagsTable: enTagsTable,
 			tagPosts: enTagPosts,
@@ -49,6 +52,7 @@ export const config: Config = {
 			navBar: esNavBar,
 			footer: esFooter,
 			blogPostList: esBlogPostList,
+			blogPost: esBlogPost,
 			tagList: esTagList,
 			tagsTable: esTagsTable,
 			tagPosts: esTagPosts,
