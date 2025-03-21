@@ -20,9 +20,14 @@
 	{#if metadata.tags !== undefined}
 		<TagList tags={metadata.tags} />
 	{/if}
-	<P class="md:text-xl dark:text-gray-400" align="right"
-		>{new Date(metadata.publishDate).toLocaleDateString($locale)}</P
-	>
+	<P class="md:text-xl dark:text-gray-400" align="right">
+		{$t('blogPost.publishDate')}{': '}{new Date(metadata.publishDate).toLocaleDateString($locale)}
+		{#if metadata.updatedDate !== undefined}
+			({$t('blogPost.lastEditedDate')}{': '}{new Date(metadata.updatedDate).toLocaleDateString(
+				$locale
+			)})
+		{/if}
+	</P>
 	<hr />
 	<main>
 		<slot />
