@@ -43,4 +43,7 @@
 	#authors {
 		display: flex;
 	}
+	a {
+		@apply font-medium text-blue-600 hover:underline dark:text-blue-500;
+	}
 </style>
