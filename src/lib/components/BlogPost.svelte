@@ -2,14 +2,21 @@
 	import P from 'flowbite-svelte/P.svelte';
 
 	import type { BlogPostMetadata } from '$lib/types/BlogPostMetadata';
+	import AuthorsList from '$lib/components/AuthorsList.svelte';
 	import TagList from '$lib/components/TagList.svelte';
-	import { locale } from '$lib/translations';
+	import { t, locale } from '$lib/translations';
 
 	export let metadata: BlogPostMetadata;
 </script>
 
 <div class="container mx-auto p-6 md:text-xl">
 	<h1>{metadata.title}</h1>
+	{#if metadata.authors !== undefined}
+		<AuthorsList name={$t('blogPost.authors')} authors={metadata.authors} />
+	{/if}
+	{#if metadata.contributors !== undefined}
+		<AuthorsList name={$t('blogPost.contributors')} authors={metadata.contributors} />
+	{/if}
 	{#if metadata.tags !== undefined}
 		<TagList tags={metadata.tags} />
 	{/if}
