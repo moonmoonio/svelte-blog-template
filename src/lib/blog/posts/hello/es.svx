@@ -2,6 +2,7 @@
 
 title: Hola
 publishDate: 2024-08-17
+updatedDate: 2025-03-21
 summary: ¡Esta publicación sí tiene un resumen!
 tags: [hola, prueba]
 
