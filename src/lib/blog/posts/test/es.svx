@@ -4,6 +4,8 @@ title: Prueba
 publishDate: 2024-08-16
 summary: Una publicación del blog que contiene un lorem ipsum
 tags: [prueba, publicación, lorem ipsum]
+authors: [{ name: Foo, link: "https://www.google.com/" }, { name: Bar, email: "bar@example.com" }]
+contributors: [{ email: "foobar@example.com" }]
 
 ---
 
