@@ -20,7 +20,7 @@
 			{/if}
 			{#if author.email !== undefined}
 				{#if author.name !== undefined}
-					<span>(<a href={`mailto:${author.email}`}>{author.email}</a>)</span>
+					<span>{' '}(<a href={`mailto:${author.email}`}>{author.email}</a>)</span>
 				{:else}
 					<span><a href={`mailto:${author.email}`}>{author.email}</a></span>
 				{/if}
