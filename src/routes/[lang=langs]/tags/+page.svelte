@@ -12,6 +12,10 @@
 	]);
 </script>
 
+<svelte:head>
+	<title>{$t('tagsTable.tags')}</title>
+</svelte:head>
+
 <div class="container mx-auto px-6 py-6 md:text-xl lg:px-52">
 	<Heading tag="h1">{$t('tagsTable.tags')}</Heading>
 	<P class="my-4 text-xl dark:text-gray-400">{$t('tagsTable.description')}</P>

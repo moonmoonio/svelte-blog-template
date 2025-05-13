@@ -11,6 +11,12 @@
 	export let data: PageData;
 </script>
 
+<svelte:head>
+	<title>
+		{$t('tagPosts.title')} {$page.params.slug}
+	</title>
+</svelte:head>
+
 <div class="container mx-auto px-6 py-6 md:text-xl lg:px-52">
 	<Heading tag="h1">{$t('tagPosts.title')} {$page.params.slug}</Heading>
 	<P class="my-4 text-xl dark:text-gray-400">{$t('tagPosts.description')}</P>
