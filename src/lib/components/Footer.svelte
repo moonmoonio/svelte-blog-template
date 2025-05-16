@@ -32,42 +32,58 @@
 	<hr />
 	<Footer>
 		<div class="m-6 sm:flex sm:justify-between">
-			<FooterCopyright
-				href={hrefConverter('/', $locale)}
-				by={site_config().copyrightOwner}
-				{year}
-			/>
-			<div class="grid grid-cols-2 gap-8">
-				<div>
-					<h2 class="font-semibold text-gray-900 dark:text-white">
-						{$t('footer.sourceCode')}
-					</h2>
-					<FooterLinkGroup>
-						<div class="mt-1 flex items-center">
-							<FlowbiteIcon.GithubSolid class={icon_class} />
-							<FooterLink href={site_config().sourceRepository}
-								>{$t('footer.repository')}</FooterLink
-							>
-						</div>
-					</FooterLinkGroup>
-				</div>
-				<div>
-					<h2 class="font-semibold text-gray-900 dark:text-white">
-						{$t('footer.socialMedia')}
-					</h2>
-					<FooterLinkGroup>
-						{#each site_config().socialMedia as socialMedia}
+			<div class="py-1">
+				<FooterCopyright
+					href={hrefConverter('/', $locale)}
+					by={site_config().copyrightOwner}
+					{year}
+				/>
+			</div>
+			<div class="flex gap-4">
+				<div class="flex flex-1 flex-col gap-4">
+					<div>
+						<h2 class="font-semibold text-gray-900 dark:text-white">
+							{$t('footer.sourceCode')}
+						</h2>
+						<FooterLinkGroup>
 							<div class="mt-1 flex items-center">
-								<svelte:component
-									this={pickIcon(socialMedia.icon).component}
-									{...pickIcon(socialMedia.icon).props}
-								/>
-								<FooterLink href={socialMedia.link} {...socialMedia.link_props}
-									>{socialMedia.text}</FooterLink
+								<FlowbiteIcon.GithubSolid class={icon_class} />
+								<FooterLink href={site_config().sourceRepository}
+									>{$t('footer.repository')}</FooterLink
 								>
 							</div>
-						{/each}
-					</FooterLinkGroup>
+						</FooterLinkGroup>
+					</div>
+					<div>
+						<h2 class="font-semibold text-gray-900 dark:text-white">{$t('footer.rss')}</h2>
+						<FooterLinkGroup>
+							<div class="mt-1 flex items-center">
+								<Icon src={SimpleIcon['SiRss']} className={icon_class} />
+								<FooterLink href={hrefConverter('/rss.xml', $locale)}>{$t('footer.rss')}</FooterLink
+								>
+							</div>
+						</FooterLinkGroup>
+					</div>
+				</div>
+				<div class="flex flex-1 flex-col gap-4">
+					<div>
+						<h2 class="font-semibold text-gray-900 dark:text-white">
+							{$t('footer.socialMedia')}
+						</h2>
+						<FooterLinkGroup>
+							{#each site_config().socialMedia as socialMedia}
+								<div class="mt-1 flex items-center">
+									<svelte:component
+										this={pickIcon(socialMedia.icon).component}
+										{...pickIcon(socialMedia.icon).props}
+									/>
+									<FooterLink href={socialMedia.link} {...socialMedia.link_props}
+										>{socialMedia.text}</FooterLink
+									>
+								</div>
+							{/each}
+						</FooterLinkGroup>
+					</div>
 				</div>
 			</div>
 		</div>
