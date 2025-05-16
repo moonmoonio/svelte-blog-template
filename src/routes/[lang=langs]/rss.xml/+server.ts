@@ -5,6 +5,8 @@ import { posts } from '$lib/blog';
 import { site_config } from '$lib/config/site';
 import { t } from '$lib/translations';
 
+export const prerender = true;
+
 export const GET: RequestHandler = ({ params }: RequestEvent) => {
 	const { lang } = params;
 	const langPosts = [...posts[lang].values()]
