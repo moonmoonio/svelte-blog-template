@@ -7,24 +7,26 @@ import { Languages } from '$lib/enums';
 // English
 import enBlogPost from './en/blogPost.json';
 import enBlogPostList from './en/blogPostList.json';
-import enFooter from './en/footer.json';
-import enNavBar from './en/navBar.json';
-import enTagList from './en/tagList.json';
-import enTagsTable from './en/tagsTable.json';
-import enTagPosts from './en/tagPosts.json';
-import enHome from './en/home.json';
 import enErrors from './en/errors.json';
+import enFooter from './en/footer.json';
+import enHome from './en/home.json';
+import enNavBar from './en/navBar.json';
+import enRss from './en/rss.json';
+import enTagList from './en/tagList.json';
+import enTagPosts from './en/tagPosts.json';
+import enTagsTable from './en/tagsTable.json';
 
 // Spanish
 import esBlogPost from './es/blogPost.json';
 import esBlogPostList from './es/blogPostList.json';
-import esFooter from './es/footer.json';
-import esNavBar from './es/navBar.json';
-import esTagList from './es/tagList.json';
-import esTagsTable from './es/tagsTable.json';
-import esTagPosts from './es/tagPosts.json';
-import esHome from './es/home.json';
 import esErrors from './es/errors.json';
+import esFooter from './es/footer.json';
+import esHome from './es/home.json';
+import esNavBar from './es/navBar.json';
+import esRss from './es/rss.json';
+import esTagList from './es/tagList.json';
+import esTagPosts from './es/tagPosts.json';
+import esTagsTable from './es/tagsTable.json';
 
 // Language agnostic
 import generic from './generic.json';
@@ -36,28 +38,30 @@ export const config: Config = {
 	initLocale: 'en',
 	translations: {
 		en: {
-			navBar: enNavBar,
-			footer: enFooter,
-			blogPostList: enBlogPostList,
 			blogPost: enBlogPost,
-			tagList: enTagList,
-			tagsTable: enTagsTable,
-			tagPosts: enTagPosts,
-			home: enHome,
+			blogPostList: enBlogPostList,
 			errors: enErrors,
+			footer: enFooter,
+			home: enHome,
+			navBar: enNavBar,
+			rss: enRss,
+			tagList: enTagList,
+			tagPosts: enTagPosts,
+			tagsTable: enTagsTable,
 			generic,
 			languages
 		},
 		es: {
-			navBar: esNavBar,
-			footer: esFooter,
-			blogPostList: esBlogPostList,
 			blogPost: esBlogPost,
-			tagList: esTagList,
-			tagsTable: esTagsTable,
-			tagPosts: esTagPosts,
+			blogPostList: esBlogPostList,
 			errors: esErrors,
+			footer: esFooter,
 			home: esHome,
+			navBar: esNavBar,
+			rss: esRss,
+			tagList: esTagList,
+			tagPosts: esTagPosts,
+			tagsTable: esTagsTable,
 			generic,
 			languages
 		}
