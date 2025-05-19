@@ -44,10 +44,22 @@ Add any new blog post to its own directory (which will be used as the post's slu
 The available front matter fields for blog posts are the following:
 
 ```
-	publishDate: string | Date; // I tend to write them in the YYYY-MM-DD format.
-	summary?: string; // Optional summary of the blog post, displayed in the list of all blog posts.
-	tags?: string[]; // Optional array of tags associated with this post.
 	title: string;
+	tags?: string[]; // Optional array of tags associated with this post.
+	summary?: string; // Optional summary of the blog post, displayed in the list of all blog posts.
+	publishDate: string | Date; // I tend to write them in the YYYY-MM-DD format.
+	updatedDate?: string | Date; //  Was the post updated after its original publish date? If so, update it here!
+	authors?: Author[]; // Optional list of authors specific to this blog post
+	contributors?: Author[]; // Optioan list of contributos specific to this blog post
+```
+
+The `Author` class referred above is taken from [`feed`](https://www.npmjs.com/package/feed) to simplify the RSS feed creation. Its fields are:
+
+```
+	name?: string;
+	email?: string;
+	link?: string;
+	avatar?: string;
 ```
 
 ### Tags
