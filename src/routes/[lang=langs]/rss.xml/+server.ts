@@ -33,7 +33,12 @@ export const GET: RequestHandler = ({ params }: RequestEvent) => {
 			published: new Date(post.publishDate),
 			description: post.summary,
 			author: post.authors,
-			contributor: post.contributors
+			contributor: post.contributors,
+			category: post.tags
+				? post.tags.map((category) => {
+						return { name: category };
+					})
+				: undefined
 		});
 	});
 	return new Response(feed.rss2(), {
