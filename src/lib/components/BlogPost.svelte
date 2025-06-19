@@ -9,7 +9,7 @@
 	export let metadata: BlogPostMetadata;
 </script>
 
-<div class="container mx-auto p-6 md:text-xl">
+<div>
 	<h1>{metadata.title}</h1>
 	{#if metadata.authors !== undefined}
 		<AuthorsList name={$t('blogPost.authors')} authors={metadata.authors} />

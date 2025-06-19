@@ -7,6 +7,10 @@
 
 <NavBar />
 <main>
-	<slot />
+	<div
+		class="container mx-auto bg-white bg-white px-6 py-6 md:text-xl lg:px-52 dark:bg-gray-800 dark:bg-gray-800"
+	>
+		<slot />
+	</div>
 </main>
 <Footer />
