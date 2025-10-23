@@ -1,11 +1,13 @@
 import type { BlogPost } from '$lib/types/BlogPost';
 import type { BlogPosts } from '$lib/types/BlogPosts';
-import type { TagsPosts } from '$lib/types/TagsPosts';
+import type { StringPostsMap } from '$lib/types/StringPostsMap';
 
 const entries = import.meta.glob<BlogPost>('./posts/**/*.svx', { eager: true });
 
 const posts: BlogPosts = {};
-const tags: TagsPosts = {};
+const tags: StringPostsMap = {};
+const categories: StringPostsMap = {};
+const series: StringPostsMap = {};
 for (const path in entries) {
 	const post = entries[path];
 	post.metadata.publishDate = new Date(post.metadata.publishDate);
@@ -28,6 +30,20 @@ for (const path in entries) {
 			tags[locale] = new Map([[tag, [post]]]);
 		}
 	});
+	if (post.metadata.category !== undefined) {
+		if (categories[locale].has(post.metadata.category)) {
+			categories[locale].get(post.metadata.category)?.push(post);
+		} else {
+			categories[locale].set(post.metadata.category, [post]);
+		}
+	}
+	if (post.metadata.series !== undefined) {
+		if (series[locale].has(post.metadata.series)) {
+			series[locale].get(post.metadata.series)?.push(post);
+		} else {
+			series[locale].set(post.metadata.series, [post]);
+		}
+	}
 }
 
 const aboutEntries = import.meta.glob<BlogPost>('./about/*.svx', { eager: true });
@@ -45,4 +61,4 @@ for (const path in aboutEntries) {
 	}
 }
 
-export { posts, tags, aboutPosts };
+export { posts, tags, categories, aboutPosts, series };

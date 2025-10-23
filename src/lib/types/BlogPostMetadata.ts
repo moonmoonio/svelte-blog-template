@@ -10,6 +10,8 @@ export interface BlogPostMetadata {
 	title: string;
 	updatedDate?: string | Date;
 	og_image?: string;
+	category?: string;
+	series?: string;
 }
 
 export function sortBlogPosts(post1: BlogPostMetadata, post2: BlogPostMetadata) {
