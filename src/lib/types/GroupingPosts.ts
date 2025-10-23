@@ -1,5 +1,5 @@
 import type { BlogPost } from '$lib/types/BlogPost';
 
-export interface StringPostsMap {
+export interface GroupingPosts {
 	[key: string]: Map<string, BlogPost[]>;
 }

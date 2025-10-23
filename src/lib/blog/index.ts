@@ -1,13 +1,13 @@
 import type { BlogPost } from '$lib/types/BlogPost';
 import type { BlogPosts } from '$lib/types/BlogPosts';
-import type { StringPostsMap } from '$lib/types/StringPostsMap';
+import type { GroupingPosts } from '$lib/types/GroupingPosts';
 
 const entries = import.meta.glob<BlogPost>('./posts/**/*.svx', { eager: true });
 
 const posts: BlogPosts = {};
-const tags: StringPostsMap = {};
-const categories: StringPostsMap = {};
-const series: StringPostsMap = {};
+const tags: GroupingPosts = {};
+const categories: GroupingPosts = {};
+const series: GroupingPosts = {};
 for (const path in entries) {
 	const post = entries[path];
 	post.metadata.publishDate = new Date(post.metadata.publishDate);
