@@ -45,7 +45,7 @@
 </script>
 
 <TableSearch
-	placeholder={$t('tagsTable.searchByGroup')}
+	placeholder={$t('tags.searchByGroup')}
 	hoverable={true}
 	bind:inputValue={searchTag}
 	shadow
@@ -53,7 +53,7 @@
 	<TableHead>
 		<TableHeadCell on:click={() => sortTable(0)}
 			><div class="flex items-center justify-between">
-				{$t('tagsTable.group')}<CaretSortSolid />
+				{$t('tags.group')}<CaretSortSolid />
 			</div></TableHeadCell
 		>
 		<TableHeadCell on:click={() => sortTable(1)}
@@ -61,11 +61,11 @@
 				class="flex items-center justify-between
 				"
 			>
-				{$t('tagsTable.numberOfPosts')}
+				{$t('tags.numberOfPosts')}
 				<CaretSortSolid />
 			</div></TableHeadCell
 		>
-		<TableHeadCell><span class="sr-only">{$t('tagsTable.viewPost')}</span></TableHeadCell>
+		<TableHeadCell><span class="sr-only">{$t('tags.viewPost')}</span></TableHeadCell>
 	</TableHead>
 	<TableBody tableBodyClass="divide-y">
 		{#each $sortedTags as [tag, count]}
@@ -75,8 +75,7 @@
 				<TableBodyCell
 					><a
 						href={hrefConverter(`/tags/${tag}`, $locale)}
-						class="text-primary-600 hover:underline dark:text-primary-500"
-						>{$t('tagsTable.viewPost')}</a
+						class="text-primary-600 hover:underline dark:text-primary-500">{$t('tags.viewPost')}</a
 					></TableBodyCell
 				>
 			</TableBodyRow>

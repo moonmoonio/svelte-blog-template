@@ -1,4 +1,7 @@
 {
+	"title": "Tag",
+	"description": "These are the posts associated with this tag.",
+	"group(s)": "Tag(s):",
 	"groupPlural": "Tags",
 	"description": "These are the tags used in the blog's posts",
 	"group": "Tag",

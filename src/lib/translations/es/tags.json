@@ -1,4 +1,7 @@
 {
+	"group(s)": "Etiqueta(s):",
+	"title": "Etiqueta",
+	"description": "Estas son las publicaciones asociadas con esta etiqueta.",
 	"groupPlural": "Etiquetas",
 	"description": "Estas son las etiquetas utilizadas en el blog",
 	"group": "Etiqueta",
