@@ -13,11 +13,11 @@
 
 <svelte:head>
 	<title>
-		{$t('tagPosts.title')}
+		{$t('tagPosts.title')}:
 		{$page.params.slug}
 	</title>
 </svelte:head>
 
-<Heading tag="h1">{$t('tagPosts.title')} {$page.params.slug}</Heading>
+<Heading tag="h1">{$t('tagPosts.title')}: {$page.params.slug}</Heading>
 <P class="my-4 text-xl dark:text-gray-400">{$t('tagPosts.description')}</P>
 <BlogPostList blogPosts={data.posts.map((post) => post.metadata)} />

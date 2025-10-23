@@ -45,7 +45,7 @@
 </script>
 
 <TableSearch
-	placeholder={$t('tagsTable.searchByTag')}
+	placeholder={$t('tagsTable.searchByGroup')}
 	hoverable={true}
 	bind:inputValue={searchTag}
 	shadow
@@ -53,7 +53,7 @@
 	<TableHead>
 		<TableHeadCell on:click={() => sortTable(0)}
 			><div class="flex items-center justify-between">
-				{$t('tagsTable.tag')}<CaretSortSolid />
+				{$t('tagsTable.group')}<CaretSortSolid />
 			</div></TableHeadCell
 		>
 		<TableHeadCell on:click={() => sortTable(1)}

@@ -10,7 +10,7 @@
 </script>
 
 <div class="flex flex-wrap items-center">
-	<P>{$t('tagList.tags')}</P>
+	<P>{$t('tagList.group(s)')}</P>
 	{#each tags as tag}
 		<div class="m-2">
 			<Button color="alternative" href={hrefConverter(`/tags/${tag}`, $locale)}

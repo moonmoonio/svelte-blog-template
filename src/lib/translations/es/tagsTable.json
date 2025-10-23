@@ -1,8 +1,8 @@
 {
-	"tags": "Etiquetas",
+	"groupPlural": "Etiquetas",
 	"description": "Estas son las etiquetas utilizadas en el blog",
-	"tag": "Etiqueta",
+	"group": "Etiqueta",
 	"numberOfPosts": "Número de publicaciones",
-	"searchByTag": "Buscar por etiqueta",
+	"searchByGroup": "Buscar por etiqueta",
 	"viewPost": "Ver publicaciones"
 }

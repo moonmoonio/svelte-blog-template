@@ -1,8 +1,8 @@
 {
-	"tags": "Tags",
+	"groupPlural": "Tags",
 	"description": "These are the tags used in the blog's posts",
-	"tag": "Tag",
+	"group": "Tag",
 	"numberOfPosts": "Number of posts",
-	"searchByTag": "Search by tag",
+	"searchByGroup": "Search by tag",
 	"viewPost": "View posts"
 }

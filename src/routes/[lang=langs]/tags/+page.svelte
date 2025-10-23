@@ -13,9 +13,9 @@
 </script>
 
 <svelte:head>
-	<title>{$t('tagsTable.tags')}</title>
+	<title>{$t('tagsTable.groupPlural')}</title>
 </svelte:head>
 
-<Heading tag="h1">{$t('tagsTable.tags')}</Heading>
+<Heading tag="h1">{$t('tagsTable.groupPlural')}</Heading>
 <P class="my-4 text-xl dark:text-gray-400">{$t('tagsTable.description')}</P>
 <TagsTable tagsPosts={tagsCount} />
