@@ -3,7 +3,7 @@
 	"description": "These are the posts associated with this series.",
 	"group(s)": "Series:",
 	"groupPlural": "Series",
-	"description": "These are the series used in the blog's posts",
+	"tableDescription": "These are the series used in the blog's posts",
 	"group": "Series",
 	"numberOfPosts": "Number of posts",
 	"searchByGroup": "Search by series",

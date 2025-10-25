@@ -3,7 +3,7 @@
 	"title": "Categoría",
 	"description": "Estas son las publicaciones asociadas con esta categoría.",
 	"groupPlural": "Categorías",
-	"description": "Estas son las categorías utilizadas en el blog",
+	"tableDescription": "Estas son las categorías utilizadas en el blog",
 	"group": "Categoría",
 	"numberOfPosts": "Número de publicaciones",
 	"searchByGroup": "Buscar por categoría",

@@ -3,7 +3,7 @@
 	"title": "Etiqueta",
 	"description": "Estas son las publicaciones asociadas con esta etiqueta.",
 	"groupPlural": "Etiquetas",
-	"description": "Estas son las etiquetas utilizadas en el blog",
+	"tableDescription": "Estas son las etiquetas utilizadas en el blog",
 	"group": "Etiqueta",
 	"numberOfPosts": "Número de publicaciones",
 	"searchByGroup": "Buscar por etiqueta",
