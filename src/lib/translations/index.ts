@@ -13,6 +13,8 @@ import enHome from './en/home.json';
 import enNavBar from './en/navBar.json';
 import enRss from './en/rss.json';
 import enTags from './en/tags.json';
+import enCategories from './en/categories.json';
+import enSeries from './en/series.json';
 
 // Spanish
 import esBlogPost from './es/blogPost.json';
@@ -23,6 +25,8 @@ import esHome from './es/home.json';
 import esNavBar from './es/navBar.json';
 import esRss from './es/rss.json';
 import esTags from './es/tags.json';
+import esCategories from './es/categories.json';
+import esSeries from './es/series.json';
 
 // Language agnostic
 import generic from './generic.json';
@@ -42,6 +46,8 @@ export const config: Config = {
 			navBar: enNavBar,
 			rss: enRss,
 			tags: enTags,
+			categories: enCategories,
+			series: enSeries,
 			generic,
 			languages
 		},
@@ -54,6 +60,8 @@ export const config: Config = {
 			navBar: esNavBar,
 			rss: esRss,
 			tags: esTags,
+			categories: esCategories,
+			series: esSeries,
 			generic,
 			languages
 		}
