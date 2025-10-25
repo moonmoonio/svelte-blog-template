@@ -1,9 +1,10 @@
 <script lang="ts">
 	import P from 'flowbite-svelte/P.svelte';
 
-	import type { BlogPostMetadata } from '$lib/types/BlogPostMetadata';
 	import AuthorsList from '$lib/components/AuthorsList.svelte';
 	import TagList from '$lib/components/TagList.svelte';
+	import type { BlogPostMetadata } from '$lib/types/BlogPostMetadata';
+	import { hrefConverter } from '$lib/transformers';
 	import { t, locale } from '$lib/translations';
 
 	export let metadata: BlogPostMetadata;
@@ -20,6 +21,20 @@
 	{#if metadata.tags !== undefined}
 		<TagList tags={metadata.tags} />
 	{/if}
+	<div class="groupings">
+		{#if metadata.series !== undefined}
+			<P>
+				{$t('series.title')}:
+				<a href={hrefConverter(`/series/${metadata.series}`, $locale)}>{metadata.series}</a>
+			</P>
+		{/if}
+		{#if metadata.category !== undefined}
+			<P>
+				{$t('categories.title')}:
+				<a href={hrefConverter(`/categories/${metadata.category}`, $locale)}>{metadata.category}</a>
+			</P>
+		{/if}
+	</div>
 	<P class="md:text-xl dark:text-gray-400" align="right">
 		{$t('blogPost.publishDate')}{': '}{new Date(metadata.publishDate).toLocaleDateString($locale)}
 		{#if metadata.updatedDate !== undefined}
@@ -61,5 +76,8 @@
 	}
 	main :global(a) {
 		@apply font-medium text-blue-600 hover:underline dark:text-blue-500;
+	}
+	div.groupings :global(a) {
+		@apply font-medium underline hover:font-bold;
 	}
 </style>
