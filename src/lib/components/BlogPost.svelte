@@ -78,6 +78,6 @@
 		@apply font-medium text-blue-600 hover:underline dark:text-blue-500;
 	}
 	div.groupings :global(a) {
-		@apply font-medium underline hover:font-bold;
+		@apply underline hover:font-bold;
 	}
 </style>

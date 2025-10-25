@@ -1,7 +1,8 @@
 <script lang="ts">
+	import Button from 'flowbite-svelte/Button.svelte';
+	import P from 'flowbite-svelte/P.svelte';
 	import Timeline from 'flowbite-svelte/Timeline.svelte';
 	import TimelineItem from 'flowbite-svelte/TimelineItem.svelte';
-	import Button from 'flowbite-svelte/Button.svelte';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 
 	import { hrefConverter } from '$lib/transformers';
@@ -33,6 +34,21 @@
 					{#if metadata.summary !== undefined}
 						<p class="mb-1 font-normal text-gray-500 dark:text-gray-400">{metadata.summary}</p>
 					{/if}
+					<div class="groupings">
+						<P>
+							{#if metadata.series !== undefined}
+								{$t('series.title')}:
+								<a href={hrefConverter(`/series/${metadata.series}`, $locale)}>{metadata.series}</a
+								>.
+							{/if}
+							{#if metadata.category !== undefined}
+								{$t('categories.title')}:
+								<a href={hrefConverter(`/categories/${metadata.category}`, $locale)}
+									>{metadata.category}</a
+								>.
+							{/if}
+						</P>
+					</div>
 					{#if metadata.tags !== undefined}
 						<TagList tags={metadata.tags} />
 					{/if}
@@ -53,5 +69,8 @@
 	}
 	div :global(li) {
 		@apply mb-4;
+	}
+	div.groupings :global(a) {
+		@apply underline hover:font-bold;
 	}
 </style>
