@@ -1,0 +1,11 @@
+{
+	"group(s)": "Serie(s):",
+	"title": "Serie",
+	"description": "Estas son las publicaciones asociadas con esta serie.",
+	"groupPlural": "Series",
+	"description": "Estas son las series utilizadas en el blog",
+	"group": "Serie",
+	"numberOfPosts": "Número de publicaciones",
+	"searchByGroup": "Buscar por serie",
+	"viewPost": "Ver publicaciones"
+}

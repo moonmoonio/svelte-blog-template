@@ -1,0 +1,11 @@
+{
+	"title": "Category",
+	"description": "These are the posts associated with this category.",
+	"group(s)": "Category/Categories:",
+	"groupPlural": "Categories",
+	"description": "These are the categories used in the blog's posts",
+	"group": "Category",
+	"numberOfPosts": "Number of posts",
+	"searchByGroup": "Search by category",
+	"viewPost": "View posts"
+}
