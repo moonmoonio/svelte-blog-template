@@ -11,11 +11,11 @@
 	import { hrefConverter } from '$lib/transformers';
 	import { t, locale } from '$lib/translations';
 
-	export let tagsPosts: [string, number][];
-	let searchTag = '';
+	export let groupsPosts: [string, number][];
+	let searchGroup = '';
 	const sortKey = writable(0);
 	const sortDirection = writable(1);
-	const sortedTags = writable(tagsPosts);
+	const sortedGroups = writable(groupsPosts);
 	const sortTable = (key: number) => {
 		if ($sortKey === key) {
 			sortDirection.update((val) => -val);
@@ -24,13 +24,13 @@
 			sortDirection.set(1);
 		}
 	};
-	$: filteredTags = tagsPosts.filter(
-		([tag]) => tag.toLowerCase().indexOf(searchTag.toLowerCase()) !== -1
+	$: filteredGroups = groupsPosts.filter(
+		([group]) => group.toLowerCase().indexOf(searchGroup.toLowerCase()) !== -1
 	);
 	$: {
 		const key = $sortKey;
 		const direction = $sortDirection;
-		const sorted = filteredTags.sort((a, b) => {
+		const sorted = filteredGroups.sort((a, b) => {
 			const valA = a[key];
 			const valB = b[key];
 			if (valA < valB) {
@@ -40,14 +40,14 @@
 			}
 			return 0;
 		});
-		sortedTags.set(sorted);
+		sortedGroups.set(sorted);
 	}
 </script>
 
 <TableSearch
 	placeholder={$t('tags.searchByGroup')}
 	hoverable={true}
-	bind:inputValue={searchTag}
+	bind:inputValue={searchGroup}
 	shadow
 >
 	<TableHead>
@@ -68,13 +68,13 @@
 		<TableHeadCell><span class="sr-only">{$t('tags.viewPost')}</span></TableHeadCell>
 	</TableHead>
 	<TableBody tableBodyClass="divide-y">
-		{#each $sortedTags as [tag, count]}
+		{#each $sortedGroups as [group, count]}
 			<TableBodyRow>
-				<TableBodyCell>{tag}</TableBodyCell>
+				<TableBodyCell>{group}</TableBodyCell>
 				<TableBodyCell>{count}</TableBodyCell>
 				<TableBodyCell
 					><a
-						href={hrefConverter(`/tags/${tag}`, $locale)}
+						href={hrefConverter(`/tags/${group}`, $locale)}
 						class="text-primary-600 hover:underline dark:text-primary-500">{$t('tags.viewPost')}</a
 					></TableBodyCell
 				>
