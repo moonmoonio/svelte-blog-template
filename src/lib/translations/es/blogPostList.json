@@ -1,5 +1,8 @@
 {
 	"readMore": "Leer más",
 	"title": "Publicaciones del blog",
-	"description": "Estas son las últimas publicaciones del blog"
+	"description": "Estas son las últimas publicaciones del blog",
+	"sortBy": "Ordenar por",
+	"newestFirst": "Nuevas",
+	"oldestFirst": "Antiguas"
 }

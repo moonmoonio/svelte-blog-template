@@ -1,5 +1,8 @@
 {
 	"readMore": "Read more",
 	"title": "Blog posts",
-	"description": "These are the latest blog posts"
+	"description": "These are the latest blog posts",
+	"sortBy": "Sort by",
+	"newestFirst": "Newest",
+	"oldestFirst": "Oldest"
 }
