@@ -13,9 +13,13 @@
 
 	export let blogPosts: BlogPostMetadata[];
 	export let numPosts: number | null = null;
+	export let newestFirst: boolean = true;
 
-	const sortPosts = (posts: BlogPostMetadata[]) => {
+	const sortPosts = (posts: BlogPostMetadata[], newestFirst: boolean) => {
 		posts = posts.sort(sortBlogPosts);
+		if (!newestFirst) {
+			posts = posts.reverse();
+		}
 		if (numPosts !== null) {
 			posts = posts.splice(0, numPosts);
 		}
@@ -25,7 +29,7 @@
 
 <div>
 	<Timeline>
-		{#each sortPosts(blogPosts) as metadata}
+		{#each sortPosts(blogPosts, newestFirst) as metadata}
 			<div class="m-6 flex w-auto items-center rounded-lg bg-gray-50 py-2 dark:bg-gray-900">
 				<TimelineItem
 					title={metadata.title}

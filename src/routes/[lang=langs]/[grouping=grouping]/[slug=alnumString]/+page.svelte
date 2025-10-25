@@ -7,8 +7,10 @@
 
 	import { t } from '$lib/translations';
 	import BlogPostList from '$lib/components/BlogPostList.svelte';
+	import PostSorting from '$lib/components/PostSorting.svelte';
 
 	export let data: PageData;
+	let newestFirst: boolean = true;
 </script>
 
 <svelte:head>
@@ -19,5 +21,14 @@
 </svelte:head>
 
 <Heading tag="h1">{$t(`${page.params.grouping}.title`)}: {page.params.slug}</Heading>
-<P class="my-4 text-xl dark:text-gray-400">{$t(`${page.params.grouping}.description`)}</P>
-<BlogPostList blogPosts={data.posts.map((post) => post.metadata)} />
+<div>
+	<P>{$t(`${page.params.grouping}.description`)}</P>
+	<PostSorting bind:newestFirst />
+</div>
+<BlogPostList blogPosts={data.posts.map((post) => post.metadata)} {newestFirst} />
+
+<style lang="postcss">
+	div :global(p) {
+		@apply my-4 md:text-xl dark:text-gray-400;
+	}
+</style>
