@@ -31,17 +31,25 @@ for (const path in entries) {
 		}
 	});
 	if (post.metadata.category !== undefined) {
-		if (categories[locale].has(post.metadata.category)) {
-			categories[locale].get(post.metadata.category)?.push(post);
+		if (categories[locale]) {
+			if (categories[locale].has(post.metadata.category)) {
+				categories[locale].get(post.metadata.category)?.push(post);
+			} else {
+				categories[locale].set(post.metadata.category, [post]);
+			}
 		} else {
-			categories[locale].set(post.metadata.category, [post]);
+			categories[locale] = new Map([[post.metadata.category, [post]]]);
 		}
 	}
 	if (post.metadata.series !== undefined) {
-		if (series[locale].has(post.metadata.series)) {
-			series[locale].get(post.metadata.series)?.push(post);
+		if (series[locale]) {
+			if (series[locale].has(post.metadata.series)) {
+				series[locale].get(post.metadata.series)?.push(post);
+			} else {
+				series[locale].set(post.metadata.series, [post]);
+			}
 		} else {
-			series[locale].set(post.metadata.series, [post]);
+			series[locale] = new Map([[post.metadata.series, [post]]]);
 		}
 	}
 }
