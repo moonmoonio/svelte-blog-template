@@ -18,4 +18,4 @@
 
 <Heading tag="h1">{$t('tags.groupPlural')}</Heading>
 <P class="my-4 text-xl dark:text-gray-400">{$t('tags.description')}</P>
-<GroupTable groupsPosts={tagsCount} />
+<GroupTable groupsPosts={tagsCount} groupName="tags" />

@@ -12,6 +12,8 @@
 	import { t, locale } from '$lib/translations';
 
 	export let groupsPosts: [string, number][];
+	export let groupName: string;
+
 	let searchGroup = '';
 	const sortKey = writable(0);
 	const sortDirection = writable(1);
@@ -45,7 +47,7 @@
 </script>
 
 <TableSearch
-	placeholder={$t('tags.searchByGroup')}
+	placeholder={$t(`${groupName}.searchByGroup`)}
 	hoverable={true}
 	bind:inputValue={searchGroup}
 	shadow
@@ -53,7 +55,7 @@
 	<TableHead>
 		<TableHeadCell on:click={() => sortTable(0)}
 			><div class="flex items-center justify-between">
-				{$t('tags.group')}<CaretSortSolid />
+				{$t(`${groupName}.group`)}<CaretSortSolid />
 			</div></TableHeadCell
 		>
 		<TableHeadCell on:click={() => sortTable(1)}
@@ -61,11 +63,11 @@
 				class="flex items-center justify-between
 				"
 			>
-				{$t('tags.numberOfPosts')}
+				{$t(`${groupName}.numberOfPosts`)}
 				<CaretSortSolid />
 			</div></TableHeadCell
 		>
-		<TableHeadCell><span class="sr-only">{$t('tags.viewPost')}</span></TableHeadCell>
+		<TableHeadCell><span class="sr-only">{$t(`${groupName}.viewPost`)}</span></TableHeadCell>
 	</TableHead>
 	<TableBody tableBodyClass="divide-y">
 		{#each $sortedGroups as [group, count]}
@@ -74,8 +76,9 @@
 				<TableBodyCell>{count}</TableBodyCell>
 				<TableBodyCell
 					><a
-						href={hrefConverter(`/tags/${group}`, $locale)}
-						class="text-primary-600 hover:underline dark:text-primary-500">{$t('tags.viewPost')}</a
+						href={hrefConverter(`/${groupName}/${group}`, $locale)}
+						class="text-primary-600 hover:underline dark:text-primary-500"
+						>{$t(`${groupName}.viewPost`)}</a
 					></TableBodyCell
 				>
 			</TableBodyRow>
