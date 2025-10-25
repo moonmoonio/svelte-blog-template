@@ -8,18 +8,19 @@
 	import { t, locale } from '$lib/translations';
 	import { tags, series, categories } from '$lib/blog';
 
-	let grouping;
-	switch (page.params.grouping) {
-		case Groupings.CATEGORIES:
-			grouping = categories;
-			break;
-		case Groupings.SERIES:
-			grouping = series;
-			break;
-		default:
-			grouping = tags;
+	function getGrouping(groupingName: string) {
+		switch (groupingName) {
+			case Groupings.CATEGORIES:
+				return categories;
+			case Groupings.SERIES:
+				return series;
+			default:
+				return tags;
+		}
 	}
 
+	$: groupName = page.params.grouping;
+	$: grouping = getGrouping(page.params.grouping);
 	let groupingsCount: [string, number][] | undefined;
 	$: {
 		if (grouping[$locale]) {
@@ -33,13 +34,13 @@
 </script>
 
 <svelte:head>
-	<title>{$t(`${page.params.grouping}.groupPlural`)}</title>
+	<title>{$t(`${groupName}.groupPlural`)}</title>
 </svelte:head>
 
-<Heading tag="h1">{$t(`${page.params.grouping}.groupPlural`)}</Heading>
+<Heading tag="h1">{$t(`${groupName}.groupPlural`)}</Heading>
 {#if groupingsCount}
-	<P class="my-4 text-xl dark:text-gray-400">{$t(`${page.params.grouping}.tableDescription`)}</P>
-	<GroupTable groupsPosts={groupingsCount} groupName={page.params.grouping} />
+	<P class="my-4 text-xl dark:text-gray-400">{$t(`${groupName}.tableDescription`)}</P>
+	<GroupTable groupsPosts={groupingsCount} {groupName} />
 {:else}
-	<P class="my-4 text-xl dark:text-gray-400">{$t(`${page.params.grouping}.tableUnavailable`)}</P>
+	<P class="my-4 text-xl dark:text-gray-400">{$t(`${groupName}.tableUnavailable`)}</P>
 {/if}
