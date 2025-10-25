@@ -1,7 +1,6 @@
 {
 	"title": "Category",
 	"description": "These are the posts associated with this category.",
-	"group(s)": "Category/Categories:",
 	"groupPlural": "Categories",
 	"tableDescription": "These are the categories used in the blog's posts.",
 	"tableUnavailable": "There are no available categories.",

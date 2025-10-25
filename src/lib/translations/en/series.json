@@ -1,7 +1,6 @@
 {
 	"title": "Series",
 	"description": "These are the posts associated with this series.",
-	"group(s)": "Series:",
 	"groupPlural": "Series",
 	"tableDescription": "These are the series used in the blog's posts.",
 	"tableUnavailable": "There are no available series.",
