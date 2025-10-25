@@ -5,6 +5,8 @@ publishDate: 2024-08-17
 updatedDate: 2025-03-21
 summary: This one does have a summary! 
 tags: [hello, test]
+category: Greetings 
+series: Hello
 
 ---
 
