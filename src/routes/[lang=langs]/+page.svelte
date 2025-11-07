@@ -12,5 +12,5 @@
 </svelte:head>
 
 <Heading tag="h1">{$t('home.title')}</Heading>
-<P class="my-4 md:text-xl dark:text-gray-400">{$t('home.description')}</P>
+<P class="my-4 md:text-xl dark:text-gray-400">{$t('home.description')}.</P>
 <BlogPostList blogPosts={[...posts[$locale].values()].map((post) => post.metadata)} numPosts={3} />
