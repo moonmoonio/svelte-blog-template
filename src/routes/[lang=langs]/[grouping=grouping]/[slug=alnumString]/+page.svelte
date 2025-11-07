@@ -3,7 +3,7 @@
 
 	import Heading from 'flowbite-svelte/Heading.svelte';
 	import P from 'flowbite-svelte/P.svelte';
-	import { page } from '$app/state';
+	import { page } from '$app/stores';
 
 	import { t } from '$lib/translations';
 	import BlogPostList from '$lib/components/BlogPostList.svelte';
@@ -11,18 +11,19 @@
 
 	export let data: PageData;
 	let newestFirst: boolean = true;
+	$: ({ grouping, slug } = $page.params);
 </script>
 
 <svelte:head>
 	<title>
-		{$t(`${page.params.grouping}.title`)}:
-		{page.params.slug}
+		{$t(`${grouping}.title`)}:
+		{slug}
 	</title>
 </svelte:head>
 
-<Heading tag="h1">{$t(`${page.params.grouping}.title`)}: {page.params.slug}</Heading>
+<Heading tag="h1">{$t(`${grouping}.title`)}: {slug}</Heading>
 <div>
-	<P>{$t(`${page.params.grouping}.description`)}</P>
+	<P>{$t(`${grouping}.description`)}</P>
 	<PostSorting bind:newestFirst />
 </div>
 <BlogPostList blogPosts={data.posts.map((post) => post.metadata)} {newestFirst} />
