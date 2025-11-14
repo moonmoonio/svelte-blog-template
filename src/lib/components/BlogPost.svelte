@@ -43,7 +43,7 @@
 			)})
 		{/if}
 	</P>
-	<hr />
+	<hr class="mb-4" />
 	<main>
 		<slot />
 	</main>
@@ -51,16 +51,16 @@
 
 <style lang="postcss">
 	div :global(h1) {
-		@apply text-2xl font-extrabold leading-relaxed md:text-4xl lg:text-6xl dark:text-white;
+		@apply mb-2 text-2xl font-extrabold leading-relaxed md:text-4xl lg:text-6xl dark:text-white;
 	}
 	div :global(h2) {
-		@apply text-xl font-extrabold leading-relaxed md:text-2xl lg:text-4xl dark:text-white;
+		@apply mb-2 text-xl font-extrabold leading-relaxed md:text-2xl lg:text-4xl dark:text-white;
 	}
 	div :global(h3) {
-		@apply font-extrabold leading-relaxed md:text-xl lg:text-2xl dark:text-white;
+		@apply mb-2 font-extrabold leading-relaxed md:text-xl lg:text-2xl dark:text-white;
 	}
 	div :global(p) {
-		@apply py-1 leading-normal md:text-xl dark:text-white;
+		@apply mb-2 py-1 leading-normal md:text-xl dark:text-white;
 	}
 	div :global(ul) {
 		@apply list-inside list-disc pl-6 leading-normal md:text-xl dark:text-white;
