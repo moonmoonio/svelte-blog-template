@@ -2,12 +2,13 @@ import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import footnotes from 'remark-footnotes';
+import content from './src/lib/utils/content.ts';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: [mdsvex({ remarkPlugins: [footnotes] }), vitePreprocess()],
+	preprocess: [mdsvex({ remarkPlugins: [footnotes, content] }), vitePreprocess()],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.

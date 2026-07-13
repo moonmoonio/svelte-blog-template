@@ -38,7 +38,8 @@ export const GET: RequestHandler = ({ params }: RequestEvent) => {
 				? post.tags.map((category) => {
 						return { name: category };
 					})
-				: undefined
+				: undefined,
+			content: post.content
 		});
 	});
 	return new Response(feed.rss2(), {
