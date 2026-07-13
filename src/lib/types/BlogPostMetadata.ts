@@ -12,6 +12,7 @@ export interface BlogPostMetadata {
 	og_image?: string;
 	category?: string;
 	series?: string;
+	content: string; // HTML content, used by RSS.
 }
 
 export function sortBlogPosts(post1: BlogPostMetadata, post2: BlogPostMetadata) {
